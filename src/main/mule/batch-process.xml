@@ -11,8 +11,8 @@ http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/ba
 	</http:listener-config>
 	<flow name="for-each-arrayFlow" doc:id="0109a43c-417a-45b0-8a31-be30f9889c38" >
 		<http:listener doc:name="Listener" doc:id="e2bca4c5-be5c-479d-b270-a8906ee5829b" config-ref="HTTP_Listener_config" path="/for-each"/>
-		<logger level="INFO" doc:name="Logger" doc:id="a69904b9-67c4-4f74-8d86-5a0e676fe47c" message="for-each-arrayFlow started"/>
-		<set-payload value='#[[12,13,14,"a",20,19,18,"b","c",1,"m",1,"o",3,5]]' doc:name="Set Payload" doc:id="a93cde42-b51b-419d-a5a3-3049dde6cbf7" />
+		<logger level="INFO" doc:name="Logger" doc:id="a69904b9-67c4-4f74-8d86-5a0e676fe47c" message="for-each-arrayFlow started for batch processing"/>
+		<set-payload value='#[[12,13,14,"a",20,19,18,"b","c",1,"m",1]]' doc:name="Set Payload" doc:id="a93cde42-b51b-419d-a5a3-3049dde6cbf7" />
 		<batch:job jobName="for-each-arrayBatch_Job" doc:id="5f609e3e-7ca4-4978-8b44-55c9fe35cdba" maxFailedRecords="8">
 			<batch:process-records >
 				<batch:step name="Batch_Step" doc:id="b720b85d-bb24-431d-a2ab-c13d535033fe" acceptPolicy="ALL">
