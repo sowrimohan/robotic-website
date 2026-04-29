@@ -18,7 +18,7 @@ http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/ba
 				<batch:step name="Batch_Step" doc:id="b720b85d-bb24-431d-a2ab-c13d535033fe" acceptPolicy="ALL">
 					<ee:transform doc:name="Transform Message" doc:id="125d9751-4531-40ca-afb3-a2d56984b6ad">
 				<ee:message>
-					<ee:set-payload><![CDATA[payload + 7]]></ee:set-payload>
+					<ee:set-payload><![CDATA[payload + 5]]></ee:set-payload>
 				</ee:message>
 			</ee:transform>
 					<batch:aggregator doc:name="Batch Aggregator" doc:id="2a1fb8d6-97ef-48f4-853a-0a16bb7aafc3" size="8">
