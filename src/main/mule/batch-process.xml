@@ -18,11 +18,11 @@ http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/ba
 				<batch:step name="Batch_Step" doc:id="b720b85d-bb24-431d-a2ab-c13d535033fe" acceptPolicy="ALL">
 					<ee:transform doc:name="Transform Message" doc:id="125d9751-4531-40ca-afb3-a2d56984b6ad">
 				<ee:message>
-					<ee:set-payload><![CDATA[payload + 7]]></ee:set-payload>
+					<ee:set-payload><![CDATA[payload + 10]]></ee:set-payload>
 				</ee:message>
 			</ee:transform>
-					<batch:aggregator doc:name="Batch Aggregator" doc:id="2a1fb8d6-97ef-48f4-853a-0a16bb7aafc3" size="8">
-						<logger level="INFO" doc:name="Logger" doc:id="671d992f-7666-4c48-adc3-23178bf4e889" message="payload"/>
+					<batch:aggregator doc:name="Batch Aggregator" doc:id="2a1fb8d6-97ef-48f4-853a-0a16bb7aafc3" size="5">
+						<logger level="INFO" doc:name="Logger" doc:id="671d992f-7666-4c48-adc3-23178bf4e889" message="#[payload]"/>
 					</batch:aggregator>
 				</batch:step>
 				<batch:step name="Batch_Step1" doc:id="14449920-c313-49c3-a94d-60850b148591" acceptPolicy="ONLY_FAILURES">
@@ -33,7 +33,7 @@ http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/ba
 				</batch:step>
 			</batch:process-records>
 			<batch:on-complete >
-				<logger level="INFO" doc:name="Logger" doc:id="c5dc14a7-ba1c-4e80-a453-bc657dab2b4d" />
+				<logger level="INFO" doc:name="Logger" doc:id="c5dc14a7-ba1c-4e80-a453-bc657dab2b4d" message="#[payload]"/>
 			</batch:on-complete>
 		</batch:job>
 		<logger level="INFO" doc:name="Logger" doc:id="44fc6654-9fb7-4e67-b9cc-c8a2dd909e96" message="for-each-arrayFlow ended for batch job" />
